@@ -20,8 +20,11 @@ export const UsersTable = pgTable(
     email: varchar("email", { length: 255 }).notNull().unique(),
     password: varchar("password", { length: 255 }).notNull(),
     role: UserRole("role").default("BASIC").notNull(),
-    createdAt: timestamp("created_at"),
-    updatedAt: timestamp("updated_at"),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    updatedAt: timestamp("updated_at", {
+      mode: "string",
+      precision: 3, // upto 3 ms
+    }).$onUpdate(() => sql`CURRENT_TIMESTAMP(3)`), // update the time when the row is modified
   },
   (table) => {
     return { emailIndex: index("email_index").on(table.email) };
