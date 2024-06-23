@@ -9,7 +9,8 @@
     "start": "node dist/index.js",
     "lint": "eslint src/**/*.ts",
     "db:generate-migration": "drizzle-kit generate",
-    "db:drop-migration": "drizzle-kit drop"
+    "db:drop-migration": "drizzle-kit drop",
+    "db:migrate": "ts-node ./src/drizzle/migrate.ts"
   },
   "keywords": [],
   "author": "",
