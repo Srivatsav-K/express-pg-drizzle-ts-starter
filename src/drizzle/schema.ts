@@ -1,8 +1,11 @@
+import { sql } from "drizzle-orm";
 import {
+  boolean,
   index,
   pgEnum,
   pgTable,
   serial,
+  text,
   timestamp,
   varchar,
 } from "drizzle-orm/pg-core";
@@ -24,3 +27,22 @@ export const UsersTable = pgTable(
     return { emailIndex: index("email_index").on(table.email) };
   }
 );
+
+export const NotesTable = pgTable("notes", {
+  id: serial("id").primaryKey(),
+  title: varchar("title", { length: 255 }).notNull(),
+  content: text("content").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at", {
+    mode: "string",
+    precision: 3, // upto 3 ms
+  }).$onUpdate(() => sql`CURRENT_TIMESTAMP(3)`), // update the time when the row is modified
+  isArchived: boolean("is_archived").default(false),
+  tags: text("tags")
+    .array()
+    .notNull()
+    .default(sql`ARRAY[]::text[]`), // https://orm.drizzle.team/learn/guides/empty-array-default-value#postgresql
+  userId: serial("user_id")
+    .references(() => UsersTable.id, { onDelete: "cascade" })
+    .notNull(),
+});
