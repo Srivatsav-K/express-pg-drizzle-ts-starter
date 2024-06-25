@@ -1,7 +1,7 @@
 {
-  "name": "todos",
+  "name": "express-pg-drizzle-ts-starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "A starter repo for scaffolding a express server with TS, PG, Drizzle ORM",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon",
