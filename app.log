@@ -1,0 +1,37 @@
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"200\",\"responseTime\":\"2.241\"}","timestamp":"2024-06-25T11:53:31.637Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api\",\"status\":\"404\",\"responseTime\":\"1.255\"}","timestamp":"2024-06-25T11:53:43.411Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T11:57:08.445Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T11:57:47.724Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T11:58:33.944Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T11:58:53.577Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T11:59:18.074Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T11:59:23.910Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T11:59:33.754Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T11:59:40.966Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T12:00:34.810Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api\",\"status\":\"404\",\"responseTime\":\"2.084\"}","timestamp":"2024-06-25T12:00:36.984Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T12:01:06.165Z"}
+{"level":"\u001b[31merror\u001b[39m","timestamp":"2024-06-25T12:01:09.959Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"500\",\"responseTime\":\"3.129\"}","timestamp":"2024-06-25T12:01:09.964Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T12:01:45.706Z"}
+{"level":"\u001b[31merror\u001b[39m","timestamp":"2024-06-25T12:01:48.484Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"500\",\"responseTime\":\"10.278\"}","timestamp":"2024-06-25T12:01:48.488Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T12:02:12.154Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T12:02:19.724Z"}
+{"level":"\u001b[31merror\u001b[39m","message":"Test error","timestamp":"2024-06-25T12:02:30.762Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"500\",\"responseTime\":\"9.258\"}","timestamp":"2024-06-25T12:02:30.765Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T12:03:03.513Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T12:03:05.054Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T12:03:08.804Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T12:03:14.687Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T12:03:22.038Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T12:03:28.845Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T12:03:55.827Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T12:04:29.516Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T12:06:20.091Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T12:06:22.091Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T12:06:23.999Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T12:06:55.963Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T12:07:15.446Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T12:07:33.006Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server listening on port 8080","timestamp":"2024-06-25T12:07:35.386Z"}
