@@ -1,10 +1,11 @@
+import cors from "cors";
 import "dotenv/config";
 import express from "express";
+import "express-async-errors";
 import { errorHandler } from "./middlewares/errorHandler.middleware";
 import morganMiddleware from "./middlewares/winston.middleware";
 import appRouter from "./routes";
 import logger from "./utils/logger.utils";
-import cors from "cors";
 
 const app = express();
 const PORT = process.env.PORT ?? 8080;
