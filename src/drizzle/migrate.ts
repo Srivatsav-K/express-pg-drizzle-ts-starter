@@ -9,13 +9,27 @@ const migrationClient = new Pool({
 });
 
 async function syncMigrationsWithDb() {
-  const db = drizzle(migrationClient);
+  try {
+    const db = drizzle(migrationClient);
 
-  await migrate(db, {
-    migrationsFolder: "./src/drizzle/migrations",
-  });
+    console.log("⏳ Running migrations...");
 
-  await migrationClient.end();
+    const start = Date.now();
+
+    await migrate(db, {
+      migrationsFolder: "./src/drizzle/migrations",
+    });
+
+    const end = Date.now();
+
+    console.log(`✅ Migrations completed in ${end - start}ms`);
+  } catch (e) {
+    console.error("❌ Migration failed");
+    console.error(e);
+    process.exit(1);
+  } finally {
+    await migrationClient.end();
+  }
 }
 
 syncMigrationsWithDb();
