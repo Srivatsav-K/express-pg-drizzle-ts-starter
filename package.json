@@ -10,7 +10,8 @@
     "lint": "eslint src/**/*.ts",
     "db:generate-migration": "drizzle-kit generate",
     "db:drop-migration": "drizzle-kit drop",
-    "db:migrate": "ts-node ./src/drizzle/migrate.ts"
+    "db:migrate": "ts-node ./src/drizzle/migrate.ts",
+    "db:studio": "drizzle-kit studio --verbose"
   },
   "keywords": [],
   "author": "",

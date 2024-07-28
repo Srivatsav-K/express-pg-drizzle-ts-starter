@@ -12,7 +12,7 @@ import {
 
 export const UserRole = pgEnum("user_role", ["ADMIN", "BASIC"]);
 
-export const UsersTable = pgTable(
+export const Users = pgTable(
   "users",
   {
     id: serial("id").primaryKey(),
@@ -20,32 +20,54 @@ export const UsersTable = pgTable(
     email: varchar("email", { length: 255 }).notNull().unique(),
     password: varchar("password", { length: 255 }).notNull(),
     role: UserRole("role").default("BASIC").notNull(),
-    createdAt: timestamp("created_at").defaultNow().notNull(),
+    createdAt: timestamp("created_at", {
+      precision: 3,
+      withTimezone: true,
+    })
+      .defaultNow()
+      .notNull(),
     updatedAt: timestamp("updated_at", {
-      mode: "string",
       precision: 3, // upto 3 ms
-    }).$onUpdate(() => sql`CURRENT_TIMESTAMP(3)`), // update the time when the row is modified
+      withTimezone: true,
+    })
+      .$onUpdate(() => sql`CURRENT_TIMESTAMP(3)`) // update the time when the row is modified
+      .defaultNow()
+      .notNull(),
   },
   (table) => {
     return { emailIndex: index("email_index").on(table.email) };
   }
 );
 
-export const NotesTable = pgTable("notes", {
-  id: serial("id").primaryKey(),
-  title: varchar("title", { length: 255 }).notNull(),
-  content: text("content").notNull(),
-  createdAt: timestamp("created_at").defaultNow().notNull(),
-  updatedAt: timestamp("updated_at", {
-    mode: "string",
-    precision: 3, // upto 3 ms
-  }).$onUpdate(() => sql`CURRENT_TIMESTAMP(3)`), // update the time when the row is modified
-  isArchived: boolean("is_archived").default(false),
-  tags: text("tags")
-    .array()
-    .notNull()
-    .default(sql`ARRAY[]::text[]`), // https://orm.drizzle.team/learn/guides/empty-array-default-value#postgresql
-  userId: serial("user_id")
-    .references(() => UsersTable.id, { onDelete: "cascade" })
-    .notNull(),
-});
+export const Notes = pgTable(
+  "notes",
+  {
+    id: serial("id").primaryKey(),
+    title: varchar("title", { length: 255 }).notNull(),
+    content: text("content").notNull(),
+    isArchived: boolean("is_archived").default(false),
+    tags: text("tags")
+      .array()
+      .notNull()
+      .default(sql`ARRAY[]::text[]`), // https://orm.drizzle.team/learn/guides/empty-array-default-value#postgresql
+    userId: serial("user_id")
+      .references(() => Users.id, { onDelete: "cascade" })
+      .notNull(),
+    createdAt: timestamp("created_at", {
+      precision: 3,
+      withTimezone: true,
+    })
+      .defaultNow()
+      .notNull(),
+    updatedAt: timestamp("updated_at", {
+      precision: 3, // upto 3 ms
+      withTimezone: true,
+    })
+      .$onUpdate(() => sql`CURRENT_TIMESTAMP(3)`)
+      .defaultNow()
+      .notNull(),
+  },
+  (table) => {
+    return { userIndex: index("user_index").on(table.userId) };
+  }
+);
