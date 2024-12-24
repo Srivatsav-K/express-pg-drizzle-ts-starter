@@ -35,7 +35,7 @@ export const Users = pgTable(
       .notNull(),
   },
   (table) => {
-    return { emailIndex: index("email_index").on(table.email) };
+    return [index("email_index").on(table.email)];
   }
 );
 
@@ -68,6 +68,6 @@ export const Notes = pgTable(
       .notNull(),
   },
   (table) => {
-    return { userIndex: index("user_index").on(table.userId) };
+    return [index("user_index").on(table.userId)];
   }
 );
